@@ -114,7 +114,7 @@ fn main() {
 
     println!("{}", inversion_count);
 
-    //let mut buffer: Vec<u32> = Vec::new(); // buffer for merge sort process
+ 
 
 
 
