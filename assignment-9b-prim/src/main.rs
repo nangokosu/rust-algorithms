@@ -67,7 +67,7 @@ where E: std::ops::Add<Output = E> + std::ops::Div<Output = E> + Default + Copy 
         .values()                     // Get the inner BTreeMaps
         .flat_map(|edges| edges.values()) // Flatten into an iterator of weights (&E)
         .copied()                     // Dereference the weights
-        .fold(E::default(), |acc, x| acc + x);
+        .fold(E::default(), |acc, x| acc + x); // cumulative sum
 
     total_doubled / E::from(2)
 }
