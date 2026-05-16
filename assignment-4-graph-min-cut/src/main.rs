@@ -123,6 +123,10 @@ fn main() {
 
     println!("Min cut is {}", min_cut);
 
+// Note: This can be further optimized; instead of using HashMap, since each vertice is just an integer, 
+// you can represent all vertex in a vector, and its neighbors in a Vec<Vec> structure. This makes cloning much easier.
+
+
 
 
 }

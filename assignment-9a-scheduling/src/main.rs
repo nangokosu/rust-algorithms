@@ -37,9 +37,9 @@ fn main() {
         }
     }
 
-    // --- METHOD 1: Difference Metric (w - l) ---
+    // Difference Metric (w - l) ---
     let mut jobs_1 = jobs.clone();
-    // Sort descending by (weight - length). If equal, sort descending by weight.
+    // Sort descending by (weight - length), then by weight.
     jobs_1.sort_unstable_by(|a, b| {
         let diff_a = a.weight - a.length;
         let diff_b = b.weight - b.length;
@@ -54,7 +54,7 @@ fn main() {
         total_weighted_time_1 += current_time_1 * job.weight;
     }
 
-    // --- METHOD 2: Ratio Metric (w / l) ---
+    // Ratio Metric (w / l) ---
     let mut jobs_2 = jobs.clone();
     // Cross-multiply to avoid floating point precision issues
     

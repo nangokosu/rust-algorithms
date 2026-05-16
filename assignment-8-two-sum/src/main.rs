@@ -13,18 +13,17 @@ fn main() {
     .trim().parse::<i64>().expect("Failed to parse integer")).collect();
 
 
-    numbers.sort_unstable();
+    numbers.sort_unstable(); // sorting to make implementation faster
 
     numbers.dedup();
 
     let mut valid_targets: HashSet<i64> = HashSet::new();
 
     for &x in &numbers {
-        // The exact mathematical range y needs to fall into
         let low_bound = -10000 - x;
         let high_bound = 10000 - x;
 
-        // Use binary search to find where the valid y's START
+        
         let start_idx = match numbers.binary_search(&low_bound) {
             Ok(idx) => idx,
             Err(idx) => idx,

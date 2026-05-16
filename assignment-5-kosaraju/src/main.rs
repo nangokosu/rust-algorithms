@@ -3,8 +3,6 @@ use std::io::BufReader;
 use std::io::BufRead;
 
 
-
-
 pub struct Graph {
     pub vertices: usize,
     adj_list: Vec<Vec<usize>>,
